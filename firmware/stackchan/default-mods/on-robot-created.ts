@@ -1,6 +1,7 @@
 import type { StackchanMod } from 'default-mods/mod'
 import Timer from 'timer'
 import { randomBetween, asyncWait } from 'stackchan-util'
+import { getDeviceSpecificColor } from '../color/color'
 
 const FORWARD = {
   y: 0,
@@ -25,6 +26,10 @@ const UP = {
 }
 
 export const onRobotCreated: StackchanMod['onRobotCreated'] = (robot) => {
+  const [r, g, b] = getDeviceSpecificColor()
+  robot.setColor('secondary', r, g, b)
+  trace(`getDeviceSpecificColor() [${r}, ${g}, ${b}]\n`)
+
   /**
    * Button A ... Look around
    */
