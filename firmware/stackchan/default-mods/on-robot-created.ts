@@ -1,7 +1,7 @@
 import type { StackchanMod } from 'default-mods/mod'
 import Timer from 'timer'
 import { randomBetween, asyncWait } from 'stackchan-util'
-import { getDeviceSpecificColor } from '../color/color'
+import { getDeviceSpecificColor } from 'color'
 
 const FORWARD = {
   y: 0,
